@@ -30,7 +30,7 @@ class ProductListView extends StatelessWidget {
 }
 
 class _ProductListBody extends StatelessWidget {
-  const _ProductListBody({super.key});
+  const _ProductListBody();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _ProductListBody extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: state.status.isLoading
-              ? Text('Loading...')
+              ? const Text('Loading...')
               : const _ProductsList(),
         );
       },
@@ -56,7 +56,7 @@ class _ProductListBody extends StatelessWidget {
 }
 
 class _ProductsList extends StatelessWidget {
-  const _ProductsList({super.key});
+  const _ProductsList();
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +70,13 @@ class _ProductsList extends StatelessWidget {
           itemBuilder: (_, Product product, int page) => ProductCard(
             model: ProductCardModel(
               name: product.displayName,
-              type: product.type.name,
+              type: product.type.toString(),
               price: formatPrice(product.prices.first.price),
+            ),
+            onTap: () => Navigator.pushNamed(
+              context,
+              '/productDetails',
+              arguments: product,
             ),
           ),
         );

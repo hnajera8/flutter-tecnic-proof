@@ -44,8 +44,8 @@ class ProductListCubit extends Cubit<ProductListState> {
 
   Future<List<Product>> loadProductsPagination(int page) async {
     final either = await repository.getProducts(
-      request: const ProductsRequestDTO(
-        page: Constants.productsInitialPage,
+      request: ProductsRequestDTO(
+        page: page,
         size: Constants.productsSize,
       ),
     );

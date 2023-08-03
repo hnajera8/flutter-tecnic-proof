@@ -18,4 +18,5 @@ class Constants {
   static const int productsSize = 10;
   static const double carouselViewportFraction = 0.9;
   static const double carouselLoaderHeight = 430;
+  static const String phone = '1777';
 }

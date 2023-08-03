@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tecnic_proof/core/http_service.dart';
+import 'package:flutter_tecnic_proof/features/product_details/presentation/view/product_details_view.dart';
 import 'package:flutter_tecnic_proof/features/product_list/data/repositories/api_product_repository.dart';
 import 'package:flutter_tecnic_proof/features/product_list/presentation/cubit/product_list_cubit.dart';
 
@@ -28,12 +29,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Product list',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const ProductListView(),
+      routes: {
+        '/productDetails': (context) => const ProductDetailsView(),
+      },
     );
   }
 }

@@ -15,8 +15,11 @@ _$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
       displayName: json['displayName'] as String? ?? '',
       type: $enumDecodeNullable(_$ProductTypesEnumMap, json['type']) ??
           ProductTypes.none,
-      fiberUploadMegas: json['fiberUploadMegas'] as int? ?? 0,
-      fiberDownloadMegas: json['fiberDownloadMegas'] as int? ?? 0,
+      fiberUploadMegas: (json['fiberUploadMegas'] as num?)?.toDouble() ?? 0,
+      fiberDownloadMegas: (json['fiberDownloadMegas'] as num?)?.toDouble() ?? 0,
+      phonelineMegas: (json['phonelineMegas'] as num?)?.toDouble() ?? 0,
+      phonelineMinutes: (json['phonelineMinutes'] as num?)?.toDouble() ?? 0,
+      phonelineSms: (json['phonelineSms'] as num?)?.toDouble() ?? 0,
       prices: (json['prices'] as List<dynamic>?)
               ?.map((e) => Price.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -34,6 +37,9 @@ Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
       'type': _$ProductTypesEnumMap[instance.type]!,
       'fiberUploadMegas': instance.fiberUploadMegas,
       'fiberDownloadMegas': instance.fiberDownloadMegas,
+      'phonelineMegas': instance.phonelineMegas,
+      'phonelineMinutes': instance.phonelineMinutes,
+      'phonelineSms': instance.phonelineSms,
       'prices': instance.prices,
     };
 

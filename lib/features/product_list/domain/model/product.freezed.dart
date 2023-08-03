@@ -27,8 +27,11 @@ mixin _$Product {
   String get name => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   ProductTypes get type => throw _privateConstructorUsedError;
-  int get fiberUploadMegas => throw _privateConstructorUsedError;
-  int get fiberDownloadMegas => throw _privateConstructorUsedError;
+  double get fiberUploadMegas => throw _privateConstructorUsedError;
+  double get fiberDownloadMegas => throw _privateConstructorUsedError;
+  double get phonelineMegas => throw _privateConstructorUsedError;
+  double get phonelineMinutes => throw _privateConstructorUsedError;
+  double get phonelineSms => throw _privateConstructorUsedError;
   List<Price> get prices => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,8 +52,11 @@ abstract class $ProductCopyWith<$Res> {
       String name,
       String displayName,
       ProductTypes type,
-      int fiberUploadMegas,
-      int fiberDownloadMegas,
+      double fiberUploadMegas,
+      double fiberDownloadMegas,
+      double phonelineMegas,
+      double phonelineMinutes,
+      double phonelineSms,
       List<Price> prices});
 }
 
@@ -76,6 +82,9 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
     Object? type = null,
     Object? fiberUploadMegas = null,
     Object? fiberDownloadMegas = null,
+    Object? phonelineMegas = null,
+    Object? phonelineMinutes = null,
+    Object? phonelineSms = null,
     Object? prices = null,
   }) {
     return _then(_value.copyWith(
@@ -110,11 +119,23 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
       fiberUploadMegas: null == fiberUploadMegas
           ? _value.fiberUploadMegas
           : fiberUploadMegas // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       fiberDownloadMegas: null == fiberDownloadMegas
           ? _value.fiberDownloadMegas
           : fiberDownloadMegas // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
+      phonelineMegas: null == phonelineMegas
+          ? _value.phonelineMegas
+          : phonelineMegas // ignore: cast_nullable_to_non_nullable
+              as double,
+      phonelineMinutes: null == phonelineMinutes
+          ? _value.phonelineMinutes
+          : phonelineMinutes // ignore: cast_nullable_to_non_nullable
+              as double,
+      phonelineSms: null == phonelineSms
+          ? _value.phonelineSms
+          : phonelineSms // ignore: cast_nullable_to_non_nullable
+              as double,
       prices: null == prices
           ? _value.prices
           : prices // ignore: cast_nullable_to_non_nullable
@@ -138,8 +159,11 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String name,
       String displayName,
       ProductTypes type,
-      int fiberUploadMegas,
-      int fiberDownloadMegas,
+      double fiberUploadMegas,
+      double fiberDownloadMegas,
+      double phonelineMegas,
+      double phonelineMinutes,
+      double phonelineSms,
       List<Price> prices});
 }
 
@@ -162,6 +186,9 @@ class __$$_ProductCopyWithImpl<$Res>
     Object? type = null,
     Object? fiberUploadMegas = null,
     Object? fiberDownloadMegas = null,
+    Object? phonelineMegas = null,
+    Object? phonelineMinutes = null,
+    Object? phonelineSms = null,
     Object? prices = null,
   }) {
     return _then(_$_Product(
@@ -196,11 +223,23 @@ class __$$_ProductCopyWithImpl<$Res>
       fiberUploadMegas: null == fiberUploadMegas
           ? _value.fiberUploadMegas
           : fiberUploadMegas // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       fiberDownloadMegas: null == fiberDownloadMegas
           ? _value.fiberDownloadMegas
           : fiberDownloadMegas // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
+      phonelineMegas: null == phonelineMegas
+          ? _value.phonelineMegas
+          : phonelineMegas // ignore: cast_nullable_to_non_nullable
+              as double,
+      phonelineMinutes: null == phonelineMinutes
+          ? _value.phonelineMinutes
+          : phonelineMinutes // ignore: cast_nullable_to_non_nullable
+              as double,
+      phonelineSms: null == phonelineSms
+          ? _value.phonelineSms
+          : phonelineSms // ignore: cast_nullable_to_non_nullable
+              as double,
       prices: null == prices
           ? _value._prices
           : prices // ignore: cast_nullable_to_non_nullable
@@ -222,6 +261,9 @@ class _$_Product implements _Product {
       this.type = ProductTypes.none,
       this.fiberUploadMegas = 0,
       this.fiberDownloadMegas = 0,
+      this.phonelineMegas = 0,
+      this.phonelineMinutes = 0,
+      this.phonelineSms = 0,
       final List<Price> prices = const []})
       : _prices = prices;
 
@@ -249,10 +291,19 @@ class _$_Product implements _Product {
   final ProductTypes type;
   @override
   @JsonKey()
-  final int fiberUploadMegas;
+  final double fiberUploadMegas;
   @override
   @JsonKey()
-  final int fiberDownloadMegas;
+  final double fiberDownloadMegas;
+  @override
+  @JsonKey()
+  final double phonelineMegas;
+  @override
+  @JsonKey()
+  final double phonelineMinutes;
+  @override
+  @JsonKey()
+  final double phonelineSms;
   final List<Price> _prices;
   @override
   @JsonKey()
@@ -264,7 +315,7 @@ class _$_Product implements _Product {
 
   @override
   String toString() {
-    return 'Product(createdAt: $createdAt, updatedAt: $updatedAt, description: $description, id: $id, name: $name, displayName: $displayName, type: $type, fiberUploadMegas: $fiberUploadMegas, fiberDownloadMegas: $fiberDownloadMegas, prices: $prices)';
+    return 'Product(createdAt: $createdAt, updatedAt: $updatedAt, description: $description, id: $id, name: $name, displayName: $displayName, type: $type, fiberUploadMegas: $fiberUploadMegas, fiberDownloadMegas: $fiberDownloadMegas, phonelineMegas: $phonelineMegas, phonelineMinutes: $phonelineMinutes, phonelineSms: $phonelineSms, prices: $prices)';
   }
 
   @override
@@ -287,6 +338,12 @@ class _$_Product implements _Product {
                 other.fiberUploadMegas == fiberUploadMegas) &&
             (identical(other.fiberDownloadMegas, fiberDownloadMegas) ||
                 other.fiberDownloadMegas == fiberDownloadMegas) &&
+            (identical(other.phonelineMegas, phonelineMegas) ||
+                other.phonelineMegas == phonelineMegas) &&
+            (identical(other.phonelineMinutes, phonelineMinutes) ||
+                other.phonelineMinutes == phonelineMinutes) &&
+            (identical(other.phonelineSms, phonelineSms) ||
+                other.phonelineSms == phonelineSms) &&
             const DeepCollectionEquality().equals(other._prices, _prices));
   }
 
@@ -303,6 +360,9 @@ class _$_Product implements _Product {
       type,
       fiberUploadMegas,
       fiberDownloadMegas,
+      phonelineMegas,
+      phonelineMinutes,
+      phonelineSms,
       const DeepCollectionEquality().hash(_prices));
 
   @JsonKey(ignore: true)
@@ -328,8 +388,11 @@ abstract class _Product implements Product {
       required final String name,
       final String displayName,
       final ProductTypes type,
-      final int fiberUploadMegas,
-      final int fiberDownloadMegas,
+      final double fiberUploadMegas,
+      final double fiberDownloadMegas,
+      final double phonelineMegas,
+      final double phonelineMinutes,
+      final double phonelineSms,
       final List<Price> prices}) = _$_Product;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
@@ -349,9 +412,15 @@ abstract class _Product implements Product {
   @override
   ProductTypes get type;
   @override
-  int get fiberUploadMegas;
+  double get fiberUploadMegas;
   @override
-  int get fiberDownloadMegas;
+  double get fiberDownloadMegas;
+  @override
+  double get phonelineMegas;
+  @override
+  double get phonelineMinutes;
+  @override
+  double get phonelineSms;
   @override
   List<Price> get prices;
   @override

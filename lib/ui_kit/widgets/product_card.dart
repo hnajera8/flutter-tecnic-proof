@@ -15,35 +15,40 @@ class ProductCard extends StatelessWidget {
   const ProductCard({
     super.key,
     required this.model,
+    this.onTap,
   });
   final ProductCardModel model;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Expanded(
-                    child: Text(
-                  model.name,
-                  style: Theme.of(context).textTheme.titleMedium,
-                )),
-                Text(model.type),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                model.price,
-                style: Theme.of(context).textTheme.titleLarge,
+    return InkWell(
+      onTap: onTap,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Expanded(
+                      child: Text(
+                    model.name,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  )),
+                  Text(model.type),
+                ],
               ),
-            ),
-          ],
+              const SizedBox(height: 10),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  model.price,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
